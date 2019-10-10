@@ -2,7 +2,7 @@ import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 import {useSelector, useDispatch} from 'react-redux'
-import {increment} from './actions'
+import {increment, decrement, login} from './actions'
 // import 
 // import { createStore } from 'react-redux'
 
@@ -16,15 +16,19 @@ function App() {
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
-        <h1>You currently have {counter} can of beans!</h1>
+        <h1>You currently have {counter} can{counter == 1 ? '' : 's'} of beans!</h1>
         <div>
+        <button onClick={() => dispatch(increment(10))}>Buy Beans at CostCo</button>
+        <button onClick={() => dispatch(increment(1))}>Buy Beans</button>
+        <button onClick={() => dispatch(decrement(10))}>Have a BBQ Beans</button>
+        <button onClick={() => dispatch(decrement(1))}>Eat Beans</button>
+        
 
-        <button onClick={() => dispatch(increment())}>Buy Beans</button>
-        <button>Eat Beans</button>
 
         </div>
+        {logged === false ? <button onClick={() => dispatch(login())} >Login</button> : ''}
 
-        {logged === true ? <h3>This should not appear when not logged in</h3> : ''}
+        {logged === true ? <h3>The beans are here. The beans are there. The beans are you. The beans are me. Succum to the bean. Become the bean. Heinz baked beans</h3> : ''}
       </header>
     </div>
   );
