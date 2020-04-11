@@ -29,7 +29,7 @@ function App() {
         </div>
         {logged === false ? <button onClick={() => dispatch(login())} >Login</button> : ''}
 
-        {logged === true ? <h3>The beans are here. The beans are there. The beans are you. The beans are me. Succum to the bean. Become the bean. Heinz baked beans</h3> : ''}
+        {logged === true ? <h3>The beans are here. The beans are there. The beans are you. The beans are me. Succumb to the bean. Become the bean. Heinz baked beans</h3> : ''}
       </header>
     </div>
   );
